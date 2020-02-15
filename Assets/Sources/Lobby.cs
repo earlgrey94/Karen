@@ -7,11 +7,13 @@ using System.Text;
 public class Lobby : MonoBehaviour
 {
     Schedule schedule;
+    
     // Start is called before the first frame update
     void Start()
     {
         schedule = Schedule.Instance;
-        FileOpen("Schedule_List.csv");  //스켸줄 정보 파일에서 읽음
+        if (schedule.scheInfo_School.Count == 0)
+            FileOpen("Assets\\Schedule_List.csv");
     }
 
     // Update is called once per frame
@@ -33,7 +35,10 @@ public class Lobby : MonoBehaviour
         {
             //첫 2줄은 읽지 않고 skip
             if (cnt < 2)
+            {
+                ++cnt;
                 continue;
+            }
 
             //빈 줄이 들어오면 return
             if (string.IsNullOrEmpty(lineStr))
@@ -52,8 +57,21 @@ public class Lobby : MonoBehaviour
 
             ++cnt;
         }
+        Debug.Log("로딩 끗! 총 갯수 : " + cnt);
     }
 
     public void CreateScheduleClick()
-    { }
+    {
+        GameObject scheWindow = this.transform.Find("Schedule").gameObject;
+        GameObject SchBtn = GameObject.Find("sch_btn"); //해당 함수를 호출하는 schedule 버튼
+
+        //Schedule 화면 on
+        scheWindow.SetActive(true);
+
+        //기본적으로 학교 일정을 리스트에 띄워줌
+        schedule.ViewScheduleInfos(schedule.scheInfo_School);
+
+        //본인 숨김
+        SchBtn.SetActive(false);
+    }
 }

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public enum SCHE_TYPE { Rest, School, AfterSchool, Forced }
 
+//각 일정(국어 수업, 전단지 알바 등) 관리
 public class ScheInfo : MonoBehaviour
 {
     enum MODE_INDEX { All, Normal, Charming, Bad, Sick }
     enum STEP_TYPE { None, Basic, High }
     enum EXPO_TYPE { Always, Unlock, Period, Disposable, Substitute }
-    enum ADJUST { None, Minus, Plus }
+    enum ADJUST { Minus, Plus, None }
 
     int scheGroupID;
     string remarks;
@@ -43,11 +44,37 @@ public class ScheInfo : MonoBehaviour
         localIndex = keys[11];
     }
 
+    public string GetScheduleInfo()
+    {
+        string str = "";
+
+        str = remarks;
+        if (stepType == STEP_TYPE.Basic)
+            str += "/초급";
+        else if (stepType == STEP_TYPE.High)
+            str += "/고급";
+
+        str += "\n";
+
+        //str += "스탯정보"
+        if (adjust == ADJUST.Plus)
+            str += "+";
+        else if (adjust == ADJUST.Minus)
+            str += "-";
+        str += money;
+
+        return str;
+    }
+
     //Procedure
     public SCHE_TYPE ScheType
     {
-        get {
-            return this.scheType;
-        }
+        get { return this.scheType; }
     }
+
+    public int ScheGroupID
+    {
+        get { return scheGroupID; }
+    }
+
 }
