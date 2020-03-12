@@ -44,7 +44,7 @@ public class Schedule : MonoBehaviour
 
     public void SetVisibleStatImg()
     {
-        GameObject statImg = GameObject.Find("statImg");
+        GameObject statImg = this.transform.Find("statImg").gameObject;
 
 
         if (statImg != null)
@@ -56,6 +56,7 @@ public class Schedule : MonoBehaviour
         }
     }
 
+
     //일정리스트를 스크롤리스트에 띄움
     //[변수]scheInfoList : 스크롤 리스트에 띄워야 하는 리스트
     //     - scheInfo_School
@@ -63,13 +64,32 @@ public class Schedule : MonoBehaviour
     //     - scheInfo_Rest
     public void ViewScheduleInfos(List<ScheInfo> scheInfoList)
     {
-        Text schInfoTxt = GameObject.Find("schInfoTxt").GetComponent<Text>(); ;
+        Text schInfoTxt = GameObject.Find("schInfoTxt").GetComponent<Text>(); 
 
         schInfoTxt.text = scheInfoList[0].GetScheduleInfo();
-        
+
+    }
+    public void ViewScheduleInfo(string schInfo)
+    {
+        switch (schInfo)
+        {
+            case "school":
+                if (scheduleCount < 4)
+                    ViewScheduleInfos(instance.scheInfo_School);
+                else
+                    ViewScheduleInfos(instance.scheInfo_AfterSchool);
+                break;
+            case "rest":
+                ViewScheduleInfos(instance.scheInfo_Rest);
+                break;
+            default:
+                Debug.Log("Invalid list call");
+                break;
+        }
+
     }
 
-    //각 화면의 스켸줄 info를 클릭했을 때
+    //스켸줄 등록
     public void AddSchedule()
     {
         //[dummy source] 아이콘을 임시로 바꾸기 위함
@@ -109,6 +129,7 @@ public class Schedule : MonoBehaviour
         Timer(0.5f);
     }
 
+    //등록된 스켸줄 삭제
     public void DeleteSchedule()
     {
         if (scheduleCount <= 0)
