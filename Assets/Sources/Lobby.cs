@@ -16,12 +16,6 @@ public class Lobby : MonoBehaviour
             FileOpen("Assets\\Schedule_List.csv");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FileOpen(string file_name)
     {
         FileStream fs = new FileStream(file_name, FileMode.Open);
@@ -47,6 +41,8 @@ public class Lobby : MonoBehaviour
             keys = lineStr.Split(',');
             ScheInfo tmpScheInfo = new ScheInfo(keys);
 
+            //Debug.Log("ID : " + tmpScheInfo.ScheGroupID);
+
             //Schedule Type에 따라 다른 list에 넣어줌
             if (tmpScheInfo.ScheType == SCHE_TYPE.School)
                 schedule.scheInfo_School.Add(tmpScheInfo);
@@ -69,9 +65,19 @@ public class Lobby : MonoBehaviour
         scheWindow.SetActive(true);
 
         //기본적으로 학교 일정을 리스트에 띄워줌
-        schedule.ViewScheduleInfos(schedule.scheInfo_School);
+        scheWindow.SendMessage("ViewScheduleInfos", schedule.scheInfo_School, SendMessageOptions.DontRequireReceiver);
+        //03.23 스켸줄 메니저 생성하면서 삭제
+        //schedule.ViewScheduleInfos(schedule.scheInfo_School);
 
         //본인 숨김
         SchBtn.SetActive(false);
+    }
+
+    //로비화면을 띄운다.
+    public void SetLobbyScene()
+    {
+        //스켸줄 버튼
+        GameObject SchBtn = this.transform.Find("sch_btn").gameObject; //해당 함수를 호출하는 schedule 버튼
+        SchBtn.SetActive(true);
     }
 }

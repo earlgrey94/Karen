@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "55774310073",
+    "firebase_url": "https://secrethouse-2822b.firebaseio.com",
+    "project_id": "secrethouse-2822b",
+    "storage_bucket": "secrethouse-2822b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55774310073:android:50f463e5137375515db568",
+        "android_client_info": {
+          "package_name": "com.basecolor.karen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55774310073-u8lpjc9mo4c8sitrujearb5jb821dllj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjBObhkKRCFuCBzdf2iM4PgbYSVTLv3JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55774310073-u8lpjc9mo4c8sitrujearb5jb821dllj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55774310073-13go7m9mih67hoge65l4pakjno47ndfp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio-flashgames.secrethouse"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55774310073:android:c20cb4a777399ab45db568",
+        "android_client_info": {
+          "package_name": "com.flash.secrethouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55774310073-sfv3travcjhbs56qbf89jf4n805viqu2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flash.secrethouse",
+            "certificate_hash": "aa13ebb2490849483c96c06c2ea0372da6074aba"
+          }
+        },
+        {
+          "client_id": "55774310073-u8lpjc9mo4c8sitrujearb5jb821dllj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjBObhkKRCFuCBzdf2iM4PgbYSVTLv3JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55774310073-u8lpjc9mo4c8sitrujearb5jb821dllj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "55774310073-13go7m9mih67hoge65l4pakjno47ndfp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.studio-flashgames.secrethouse"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

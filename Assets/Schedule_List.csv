@@ -1,4 +1,4 @@
-스케쥴,부가설명,스케쥴 타입값,년차,월자,일자,딸의 상태,교육 단계값,노출 형태값,가감치,금액,리소스경로,로컬
+﻿스케쥴,부가설명,스케쥴 타입값,년차,월자,일자,딸의 상태,교육 단계값,노출 형태값,가감치,금액,리소스경로,로컬
 ScheGroupID,remarks,ScheType,YearNum,MonthNum,DayNum,ModeIndex,StepType,ExpoType,Adjust,Money,Prefab,LocalIndex
 1010101,국어(초등),1,0,3,2,0,1,0,1,10000,리소스경로,SCHEDULE_1010101
 1010102,국어(초등고급),1,0,3,2,0,2,4,1,13000,리소스경로,SCHEDULE_1010102
